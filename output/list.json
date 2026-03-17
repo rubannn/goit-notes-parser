@@ -1,70 +1,70 @@
 [
   {
     "title": "Огляд дисципліни",
-    "btn": "<button data-testid=\"NavigationList__ListItemIcon_36547440\" class=\"next-1di1xj4 esst5hi4\">"
+    "link": ""
   },
   {
     "title": "Тема 1. Основи дизайну мобільних застосунків",
-    "btn": "<button data-testid=\"NavigationList__ListItemIcon_36547453\" class=\"next-1di1xj4 esst5hi4\">"
+    "link": ""
   },
   {
     "title": "Тема 2. Дизайн-системи iOS та Android",
-    "btn": "<button data-testid=\"NavigationList__ListItemIcon_36547460\" class=\"next-1di1xj4 esst5hi4\">"
+    "link": ""
   },
   {
     "title": "Наукова публiкацiя 1",
-    "btn": "<button data-testid=\"NavigationList__ListItemIcon_36547473\" class=\"next-1di1xj4 esst5hi4\">"
+    "link": ""
   },
   {
     "title": "Тема 3. UX для мобільних застосунків",
-    "btn": "<button data-testid=\"NavigationList__ListItemIcon_36547480\" class=\"next-1di1xj4 esst5hi4\">"
+    "link": ""
   },
   {
     "title": "Тема 4. Тестування дизайну мобільних застосунків",
-    "btn": "<button data-testid=\"NavigationList__ListItemIcon_36547481\" class=\"next-1di1xj4 esst5hi4\">"
+    "link": ""
   },
   {
     "title": "Тема 5. Вступ до React Native",
-    "btn": "<button data-testid=\"NavigationList__ListItemIcon_36547484\" class=\"next-1di1xj4 esst5hi4\">"
+    "link": ""
   },
   {
     "title": "Тема 6. Компоненти React Native та їх стилізація",
-    "btn": "<button data-testid=\"NavigationList__ListItemIcon_36547499\" class=\"next-1di1xj4 esst5hi4\">"
+    "link": ""
   },
   {
     "title": "Тема 7. Робота з навігацією",
-    "btn": "<button data-testid=\"NavigationList__ListItemIcon_36547512\" class=\"next-1di1xj4 esst5hi4\">"
+    "link": ""
   },
   {
     "title": "Тема 8. Робота з даними та API",
-    "btn": "<button data-testid=\"NavigationList__ListItemIcon_36547524\" class=\"next-1di1xj4 esst5hi4\">"
+    "link": ""
   },
   {
     "title": "Тема 9. Стан застосунку: Context API та Redux",
-    "btn": "<button data-testid=\"NavigationList__ListItemIcon_36547532\" class=\"next-1di1xj4 esst5hi4\">"
+    "link": ""
   },
   {
     "title": "Тема 10. Робота з нативними модулями",
-    "btn": "<button data-testid=\"NavigationList__ListItemIcon_36547538\" class=\"next-1di1xj4 esst5hi4\">"
+    "link": ""
   },
   {
     "title": "Наукова публiкацiя 2",
-    "btn": "<button data-testid=\"NavigationList__ListItemIcon_36547493\" class=\"next-1di1xj4 esst5hi4\">"
+    "link": ""
   },
   {
     "title": "Тема 11. Оптимізація продуктивності",
-    "btn": "<button data-testid=\"NavigationList__ListItemIcon_36547545\" class=\"next-1di1xj4 esst5hi4\">"
+    "link": ""
   },
   {
     "title": "Тема 12. Публікація застосунків у сторах",
-    "btn": "<button data-testid=\"NavigationList__ListItemIcon_36547551\" class=\"next-1di1xj4 esst5hi4\">"
+    "link": ""
   },
   {
     "title": "Фiнальне тестування",
-    "btn": "<button data-testid=\"NavigationList__ListItemIcon_36547558\" class=\"next-1di1xj4 esst5hi4\">"
+    "link": ""
   },
   {
     "title": "Фiнальний проєкт",
-    "btn": "<button data-testid=\"NavigationList__ListItemIcon_36547559\" class=\"next-1di1xj4 esst5hi4\">"
+    "link": ""
   }
 ]

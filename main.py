@@ -21,6 +21,7 @@ class GoITScraper:
             context = browser.new_context(viewport={"width": 1600, "height": 900})
             page = context.new_page()
 
+            # открыть страницу логина
             page.goto(self.cfg.PAGE)
 
             page.fill('input[name="email"]', self.cfg.USER)
@@ -28,40 +29,69 @@ class GoITScraper:
 
             page.click('button[type="submit"]')
 
-            # просто подождать
             page.wait_for_timeout(3000)
-
             print("Successfully logged in...")
 
             page.goto(self.cfg.TARGET_PAGE)
-
             page.wait_for_load_state("load")
+            page.wait_for_timeout(3000)
 
             print("Opened target page")
-            page.wait_for_timeout(5000)
 
-            items = page.evaluate(
-                """
-                () => {
-                    return Array.from(document.querySelectorAll('ul[open] li')).map(li => {
-                        const btnEl = li.querySelector('button');
-                        if (!btnEl) return null;
-                        
-                        const title = li.querySelector('.next-vhhssk')?.innerText.trim() || '';
-                        const btn = li.querySelector('button')?.outerHTML.split('>')[0] + '>' || '';
+            page.wait_for_selector("ul[open] li", timeout=10000)
+            items_data = []
 
-                        return {title: title, btn: btn};
-                    });
-                }
-                """
-            )
+            items = page.locator('ul[open] > li > div[data-testid^="NavigationList__ListItemContent"]')
+            count = items.count()
+            print('~~~~ ', count)
 
-            # создать папку output если её нет
+            for i in range(count - 1, -1, -1):
+                li_div = items.nth(i)
+
+                second_div = li_div.locator("div")
+                # print(f"{i} {second_div.count()=}")
+                if second_div.count() != 2:
+                    continue
+
+                title = second_div.nth(1).inner_text().strip()
+
+                items_data.append({
+                    "title": title,
+                    "link": ''
+                })
+
+                # кнопка раскрытия списка (если есть)
+                btn = li_div.locator('button[data-testid^="NavigationList__ListItemIcon"]')
+                if btn.count() == 0:
+                    continue
+                print("Processing:", title)
+                btn.click()
+                page.wait_for_timeout(1000)
+
+                # if btn.count() == 0:
+                #     continue
+
+                # print("Processing:", title)
+
+                # old_url = page.url
+
+                # btn.click()
+
+                # # ждать смену URL (SPA)
+                # page.wait_for_url(lambda url: url != old_url, timeout=5000)
+
+                # link = page.url
+
+
+
+                # page.go_back()
+                # page.wait_for_load_state("load")            # создать папку output если её нет
+
+            items_data.reverse()
             os.makedirs("output", exist_ok=True)
-
-            # сохранить json
+            # сохранить JSON
             with open("output/list.json", "w", encoding="utf-8") as f:
-                json.dump(items, f, ensure_ascii=False, indent=2)
+                json.dump(items_data, f, ensure_ascii=False, indent=2)
 
             print("Saved to output/list.json")
 
